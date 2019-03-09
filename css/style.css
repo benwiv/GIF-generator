@@ -48,11 +48,20 @@ body{
 }
 
 .buttons-view {
-  display:flex;
+  margin: 20px 50px 50px 50px;
+  display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 button {
-  padding:auto;
+  padding:10px 20px;
+  font-family: 'ITC Avant Garde Std-Demi', sans-serif;
+  font-size: 14px;
 }
+
+/* #movie-form {
+  padding:10px 20px;
+  font-family: 'ITC Avant Garde Std-Demi', sans-serif;
+  font-size: 14px;
+} */
