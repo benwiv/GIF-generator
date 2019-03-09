@@ -46,3 +46,13 @@ body{
   margin-left: 30px;
   align-self: center;
 }
+
+.buttons-view {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+button {
+  padding:auto;
+}

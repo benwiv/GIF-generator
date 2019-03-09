@@ -8,7 +8,7 @@ $.ajax({
 });
 
 //  list of my interests
-let myList = ['music', 'dancing', 'film', 'science fiction', 'france', 'coffee'];
+let myList = ['music', 'space', 'film', 'science', 'france', 'coffee'];
 
 
 //  animate or still function
