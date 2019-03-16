@@ -3,13 +3,13 @@ const myList = ['music', 'space', 'film', 'science', 'france', 'coffee'];
 
 //==============FUNCTIONS=============//
 let renderButtons = function(){
-  $("#buttons-view").empty();
+  $('#buttons-view').empty();
   for (let i = 0; i < myList.length; i++) {
     let button = $("<button>");
-    button.addClass("topic-name");
-    button.attr("data-name", myList[i]);
+    button.addClass('topic-name');
+    button.attr('data-name', myList[i]);
     button.text(myList[i]);
-    $("#buttons-view").append(button);
+    $('#buttons-view').append(button);
   }
 
   $('#input-topic').val('');
@@ -17,7 +17,7 @@ let renderButtons = function(){
 
 //===========EVENT LISTENERS=============//
 //  ADD button on click function
-$("#add-topic").on("click", function(event) {
+$(document).on("click", '#add-topic', function(event) {
   event.preventDefault();
 
   let newTopic = $('#input-topic').val().trim();
@@ -32,7 +32,7 @@ $("#add-topic").on("click", function(event) {
 
   $.ajax({
     url: queryURL,
-    method: "GET"
+    method: 'GET'
   })
   
   .then(function(response) {
@@ -44,38 +44,42 @@ $("#add-topic").on("click", function(event) {
         let gifDiv = $("<div class='resultGIF'>");
         let rating = results[j].rating;
         let p = $("<p>").text("Andy's MPAA Rating: " + rating);
-        let peaksImg = $("<img class='gif' data-state='still'>");
+        let peaksImg = $("<img class='gif' data-state='animate'>");
         let gifURL = results[j].images.fixed_height.url
         let gifStillURL = results[j].images.fixed_height_still.url
         
         peaksImg.attr("src", gifURL);
-        peaksImg.attr('data-state', 'animate')
         peaksImg.attr('data-animate', gifURL);
         peaksImg.attr('data-still', gifStillURL);
 
         gifDiv.append(p);
         gifDiv.append(peaksImg);
-        $("#gif-display").prepend(gifDiv);
+        $('#gif-display').prepend(gifDiv);
       }
     }
   });
 });
-
-//  pause/play functionality for GIFs
-$(".gif").on("click", function() {
-  let state = $(this).attr("data-state");
-
-  if (state === "still") {
-    $(this).attr("src", $(this).attr("data-animate"));
-    console.log(state); 
-    $(this).attr("data-state", "animate");
-  } 
   
-  $(this).attr("src", $(this).attr("data-still"));
-  console.log(state); 
-  $(this).attr("data-state", "still");
+  //  pause/play functionality for GIFs
+$(document).on("click", ".gif", function() {
+  console.log('hello');
+  let state = $(this).attr('data-state');
+
+  if (state === 'still') {
+    $(this).attr('src', $(this).attr('data-animate'));
+    $(this).attr('data-state', 'animate');
+  } 
+  else {
+    $(this).attr('src', $(this).attr('data-still'));
+    $(this).attr('data-state', 'still');
+  }  
 });
 
+function alertMovieName() {
+  var movieName = $(this).attr("data-state");
+
+  alert(movieName);
+}
 
 //==============FUNCTION CALLS=============//
 renderButtons();
