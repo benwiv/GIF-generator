@@ -8,7 +8,7 @@ body{
   background: rgb(95, 192, 95);
   color: rgb(44, 71, 18);
 }
-
+  
 #wrapper {
   font-family: 'ITC Avant Garde Std-Demi', sans-serif;
   margin:5%;
@@ -17,115 +17,113 @@ body{
   flex-wrap:wrap;
 }
 
-#main-title {
-  font-size: 40px;
-  margin-bottom:20px;
-  align-self:center;
-}
+  #main-title {
+    font-size: 40px;
+    margin-bottom:20px;
+    align-self:center;
+  }
 
-#description {
-  font-size: 22px;
-  line-height: 1.5em;
-  align-self:center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap:wrap;
-  justify-content: space-between;
-}
+  #description {
+    font-size: 22px;
+    line-height: 1.5em;
+    align-self:center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-between;
+  }
 
-#topic-form {
-  margin:10px;
-  align-self:center;
-  display:flex;
-  flex-direction: column;
-}
+    #dale-gif {
+      margin:auto;
+      align-self: center;
+      box-shadow: 0 3px 6px rgb(5, 83, 5);
+    }
 
-#form-label {
-  max-width: 400px;
-  display:flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
+    #description-content {
+      max-width: 900px;
+      min-width: 200px;
+      padding:20px;
+      margin: 20px auto;
+      align-self: center;
+    }
+  
+  #buttons-view {
+    max-width: 1400px;
+    align-self:center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+  }
 
-#input-topic {
-  justify-self: stretch;
-  margin:20px;
-}
+    .topic-name {
+      margin: 20px;
+      padding:12px 20px 8px 20px;
+      font-family: 'ITC Avant Garde Std-Demi', sans-serif;
+      font-size: 14px;
+      box-shadow: 0 2px 6px rgb(5, 83, 5);
+      border-color: rgb(118, 229, 75);
+      background: rgb(59,96,25);
+      color:rgb(118, 229, 75);
+    }
 
-#add-topic {
-  align-self: center;
-  flex-grow:0;
-  padding: 7px 8px 3px 8px;
-  /* box-shadow: 0 1px 5px rgb(5, 83, 5); */
-  font-family: 'ITC Avant Garde Std-Demi', sans-serif;
-  font-size: 14px;
-  box-shadow: 0 2px 6px rgb(5, 83, 5);
-  border-color: rgb(118, 229, 75);
-  background: rgb(59,96,25);
-  color:rgb(118, 229, 75);
-}
+  #topic-form {
+    margin:10px;
+    align-self:center;
+    display:flex;
+    flex-direction: column;
+  }
 
-#dale-gif {
-  margin:auto;
-  align-self: center;
-  box-shadow: 0 3px 6px rgb(5, 83, 5);
-}
+    #form-label {
+      max-width: 400px;
+      display:flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+      #input-topic {
+        justify-self: stretch;
+        margin:20px;
+        background: rgb(140, 223, 108);
+        color: rgb(44, 71, 18);
+        border-color: rgb(59,96,25);
+      }
 
-#description-content {
-  max-width: 900px;
-  min-width: 200px;
-  padding:20px;
-  margin: 20px auto;
-  align-self: center;
-}
+    #add-topic {
+      align-self: center;
+      flex-grow:0;
+      padding: 7px 8px 3px 8px;
+      /* box-shadow: 0 1px 5px rgb(5, 83, 5); */
+      font-family: 'ITC Avant Garde Std-Demi', sans-serif;
+      font-size: 14px;
+      box-shadow: 0 2px 6px rgb(5, 83, 5);
+      border-color: rgb(118, 229, 75);
+      background: rgb(59,96,25);
+      color:rgb(118, 229, 75);
+    }
 
-#buttons-view {
-  max-width: 1400px;
-  align-self:center;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
-}
+  #gif-display{
+    max-width:1400px;
+    margin:auto;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
 
-.topic-name {
-  margin: 20px;
-  padding:12px 20px 8px 20px;
-  font-family: 'ITC Avant Garde Std-Demi', sans-serif;
-  font-size: 14px;
-  box-shadow: 0 2px 6px rgb(5, 83, 5);
-  border-color: rgb(118, 229, 75);
-  background: rgb(59,96,25);
-  color:rgb(118, 229, 75);
-}
+    .resultGIF {
+      max-width: 302px;
+      margin: 0;
+      padding: 30px;
+    }
 
-#gif-display{
-  max-width:1400px;
-  margin:auto;
-  display:flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.resultGIF {
-  max-width: 302px;
-  margin: 0;
-  padding: 30px;
-}
-
-#rating-info {
-  margin: 10px auto;
-}
-
-.gif {
-  height:200px;
-  width:302px;
-  box-shadow: 0 3px 6px rgb(5, 83, 5);
-}
-/* #topic-form {
-  padding:10px 20px;
-  font-family: 'ITC Avant Garde Std-Demi', sans-serif;
-  font-size: 14px;
-} */
+      #rating-info {
+        margin: 10px auto;
+      }
+      
+      .gif {
+        height:200px;
+        width:302px;
+        box-shadow: 0 3px 6px rgb(5, 83, 5);
+      }
