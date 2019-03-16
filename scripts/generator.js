@@ -43,7 +43,7 @@ $(document).on("click", '#add-topic', function(event) {
   renderButtons();
   //  replacing white space with + for URL
   newTopic=newTopic.replace(/\s+/g, '+');
-  let queryURL = "https://api.giphy.com/v1/gifs/search?q=twinpeaks+" + newTopic + "&api_key=dc6zaTOxFJmzC&limit=10";
+  let queryURL = "https://api.giphy.com/v1/gifs/search?q=twinpeaks+" + newTopic + "&api_key=dc6zaTOxFJmzC&limit=6";
   //  AJAX call with Giphy queryURL
   $.ajax({
     url: queryURL,
@@ -58,7 +58,7 @@ $(document).on("click", '#add-topic', function(event) {
 $(document).on("click", '.topic-name', function(event) {
   event.preventDefault();
   let newTopic = $(this).attr('data-name');
-  let queryURL = "https://api.giphy.com/v1/gifs/search?q=twinpeaks+" + newTopic + "&api_key=dc6zaTOxFJmzC&limit=10";
+  let queryURL = "https://api.giphy.com/v1/gifs/search?q=twinpeaks+" + newTopic + "&api_key=dc6zaTOxFJmzC&limit=6";
   //  AJAX call with Giphy queryURL
   $.ajax({
     url: queryURL,
