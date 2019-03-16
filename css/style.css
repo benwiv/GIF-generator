@@ -24,15 +24,15 @@ body{
   flex-direction: row;
 }
 
-#movie-form {
+#topic-form {
   margin:10px 20px 20px 10px;
 }
 
-#movie-input {
+#input-topic {
   margin: 0 30px;
 }
 
-#add-movie {
+#add-topic {
   margin: 20px 100px;
 }
 
@@ -47,7 +47,7 @@ body{
   align-self: center;
 }
 
-.buttons-view {
+#buttons-view {
   margin: 20px 50px 50px 50px;
   display: flex;
   flex-direction: row;
@@ -60,7 +60,7 @@ button {
   font-size: 14px;
 }
 
-/* #movie-form {
+/* #topic-form {
   padding:10px 20px;
   font-family: 'ITC Avant Garde Std-Demi', sans-serif;
   font-size: 14px;
