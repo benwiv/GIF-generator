@@ -1,5 +1,5 @@
 //===========GLOBAL VARIABLES=============//
-const myList = ['music', 'space', 'film', 'science', 'france', 'coffee'];
+const myList = ['dale cooper', 'audrey', 'black lodge', 'one eyed jack', 'bobby', 'ben horne'];
 
 //==============FUNCTIONS=============//
 let renderButtons = function(){
@@ -54,10 +54,11 @@ $(document).on("click", '#add-topic', function(event) {
   });
 });
 
-//  render GIFs on button click
+//  render GIFs on generated button click
 $(document).on("click", '.topic-name', function(event) {
   event.preventDefault();
   let newTopic = $(this).attr('data-name');
+  newTopic=newTopic.replace(/\s+/g, '+');
   let queryURL = "https://api.giphy.com/v1/gifs/search?q=twinpeaks+" + newTopic + "&api_key=dc6zaTOxFJmzC&limit=6";
   //  AJAX call with Giphy queryURL
   $.ajax({
