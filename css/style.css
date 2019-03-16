@@ -11,21 +11,26 @@ body{
 #wrapper {
   font-family: 'ITC Avant Garde Std-Demi', sans-serif;
   margin:5%;
+  display: flex;
+  flex-direction:column;
 }
 
 #main-title {
   font-size: 40px;
+  align-self:center;
 }
 
 #description {
   font-size: 22px;
   line-height: 1.5em;
+  align-self:center;
   display: flex;
   flex-direction: row;
 }
 
 #topic-form {
-  margin:10px 20px 20px 10px;
+  margin:10px;
+  align-self:center;
 }
 
 #input-topic {
@@ -60,6 +65,25 @@ button {
   font-size: 14px;
 }
 
+#gif-display{
+  max-width:1400px;
+  margin:auto;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.resultGIF {
+  max-width: 302px;
+  margin: 0;
+  padding: 30px;
+}
+
+.gif {
+  height:200px;
+  width:302px;
+}
 /* #topic-form {
   padding:10px 20px;
   font-family: 'ITC Avant Garde Std-Demi', sans-serif;
