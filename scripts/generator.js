@@ -16,6 +16,7 @@ let renderButtons = function(){
 }
 
 //===========EVENT LISTENERS=============//
+//  ADD button on click function
 $("#add-topic").on("click", function(event) {
   event.preventDefault();
 
@@ -29,44 +30,53 @@ $("#add-topic").on("click", function(event) {
   let queryURL = "https://api.giphy.com/v1/gifs/search?q=twinpeaks+" + newTopic + "&api_key=dc6zaTOxFJmzC&limit=10";
 
 
-  // $.ajax({
-  //   url: queryURL,
-  //   method: "GET"
-  // })
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  })
   
-  // .then(function(response) {
-  // var results = response.data;
+  .then(function(response) {
+    let results = response.data;
+    console.log(results)
 
-  // for (var i = 0; i < results.length; i++) {
-  //   if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
-  //     var gifDiv = $("<div class='resultGIF'>");
-  //     var rating = results[i].rating;
-  //     var p = $("<p>").text("Rating: " + rating);
-  //     var personImage = $("<img>");
-  //     personImage.attr("src", results[i].images.fixed_height.url);
-  //     gifDiv.append(p);
-  //     gifDiv.append(personImage);
-  //     $("#gif-display-div").prepend(gifDiv);
-  //   }
-  // }
-  // });
+    for (let j = 0; j < results.length; j++) {
+      if (results[j].rating !== "r") {
+        let gifDiv = $("<div class='resultGIF'>");
+        let rating = results[j].rating;
+        let p = $("<p>").text("Andy's MPAA Rating: " + rating);
+        let peaksImg = $("<img class='gif' data-state='still'>");
+        let gifURL = results[j].images.fixed_height.url
+        let gifStillURL = results[j].images.fixed_height_still.url
+        
+        peaksImg.attr("src", gifURL);
+        peaksImg.attr('data-state', 'animate')
+        peaksImg.attr('data-animate', gifURL);
+        peaksImg.attr('data-still', gifStillURL);
+
+        gifDiv.append(p);
+        gifDiv.append(peaksImg);
+        $("#gif-display").prepend(gifDiv);
+      }
+    }
+  });
 });
 
+//  pause/play functionality for GIFs
+$(".gif").on("click", function() {
+  let state = $(this).attr("data-state");
 
-//  animate or still function
-// $(".gif").on("click", function() {
-//   var state = $(this).attr("data-state");
-
-//   if (state === "still") {
-//     $(this).attr("src", $(this).attr("data-animate"));
-//     $(this).attr("data-state", "animate");
-//   } 
-//   else {
-//     $(this).attr("src", $(this).attr("data-still"));
-//     $(this).attr("data-state", "still");
-//   }
-// });
+  if (state === "still") {
+    $(this).attr("src", $(this).attr("data-animate"));
+    console.log(state); 
+    $(this).attr("data-state", "animate");
+  } 
+  
+  $(this).attr("src", $(this).attr("data-still"));
+  console.log(state); 
+  $(this).attr("data-state", "still");
+});
 
 
 //==============FUNCTION CALLS=============//
 renderButtons();
+
