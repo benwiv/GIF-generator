@@ -43,7 +43,7 @@ $(document).on("click", '#add-topic', function(event) {
       if (results[j].rating !== "r") {
         let gifDiv = $("<div class='resultGIF'>");
         let rating = results[j].rating;
-        let p = $("<p>").text("Andy's MPAA Rating: " + rating);
+        let p = $("<p id='rating-info'>").text("Andy's MPAA Rating: " + rating);
         let peaksImg = $("<img class='gif' data-state='animate'>");
         let gifURL = results[j].images.fixed_height.url
         let gifStillURL = results[j].images.fixed_height_still.url
